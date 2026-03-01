@@ -17,7 +17,7 @@ function FloatingWhatsApp() {
       rel="noopener noreferrer"
       aria-label="Chat with DE Dance Destiny Academy on WhatsApp"
     >
-      <FaWhatsapp />
+      <FaWhatsapp size={28}/>
     </a>
   );
 }
