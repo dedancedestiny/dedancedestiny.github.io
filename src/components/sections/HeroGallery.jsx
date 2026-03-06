@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Hero.css";
 
 import img1 from "../../assets/dance1.jpeg";
@@ -7,29 +7,15 @@ import img3 from "../../assets/dance3.jpeg";
 import img4 from "../../assets/dance4.jpeg";
 
 const gallery = [
-  {
-    image: img1,
-    title: "Kids Dance Classes",
-    text: "Fun dance training for kids to build confidence."
-  },
-  {
-    image: img2,
-    title: "Hip Hop Training",
-    text: "Professional hip hop choreography training."
-  },
-  {
-    image: img3,
-    title: "Wedding Choreography",
-    text: "Memorable wedding dance performances."
-  },
-  {
-    image: img4,
-    title: "Stage Performance",
-    text: "Advanced stage performance training."
-  }
+  { image: img1, title: "Kids Dance Classes" },
+  { image: img2, title: "Hip Hop Training" },
+  { image: img3, title: "Wedding Choreography" },
+  { image: img4, title: "Stage Performance" }
 ];
 
 function HeroGallery() {
+
+  const [active, setActive] = useState(0);
 
   return (
     <section className="hero-gallery">
@@ -37,20 +23,32 @@ function HeroGallery() {
       <div className="gallery-container">
 
         {gallery.map((item, index) => (
-
-          <div key={index} className="gallery-card">
+          <div
+            key={index}
+            className={`gallery-card ${index === active ? "active" : ""}`}
+          >
 
             <img src={item.image} alt={item.title} />
 
-            <div className="gallery-content">
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+            <div className="gallery-overlay">
+              <p>{item.title}</p>
             </div>
 
           </div>
-
         ))}
 
+      </div>
+
+      {/* DOT SLIDER */}
+
+      <div className="gallery-dots">
+        {gallery.map((_, index) => (
+          <span
+            key={index}
+            className={active === index ? "dot active" : "dot"}
+            onClick={() => setActive(index)}
+          ></span>
+        ))}
       </div>
 
     </section>

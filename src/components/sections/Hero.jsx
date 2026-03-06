@@ -8,9 +8,7 @@ function Hero() {
 
       <div className="hero-container">
 
-        <p className="hero-tag">
-          IGNITE PASSION • MOVE
-        </p>
+        <p className="hero-tag">IGNITE PASSION • MOVE</p>
 
         <h1 className="hero-title">
           Chennai’s Most <span>Energetic</span> Dance Academy
@@ -21,25 +19,17 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-
-          <a
-            href="https://wa.me/918754470020"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
+          <a href="https://wa.me/918754470020" className="btn-primary">
             Book Free Trial
           </a>
 
           <a href="#services" className="btn-outline">
             Explore Programs
           </a>
-
         </div>
 
       </div>
 
-      {/* Gallery Section */}
       <HeroGallery />
 
     </section>
