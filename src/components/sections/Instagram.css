@@ -1,0 +1,77 @@
+.instagram-section{
+padding:100px 20px;
+background:linear-gradient(135deg,#7cc6d9,#d7df6f);
+}
+
+.instagram-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+.instagram-title{
+font-size:36px;
+font-weight:700;
+margin-bottom:10px;
+color:#111;
+}
+
+.instagram-subtitle{
+max-width:700px;
+margin:auto;
+margin-bottom:60px;
+color:#333;
+line-height:1.6;
+}
+
+/* SLIDER */
+
+.instagram-slider{
+padding-bottom:50px;
+}
+
+/* CARD */
+
+.instagram-card{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+transition:all 0.3s ease;
+}
+
+.instagram-card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* DOT PAGINATION */
+
+.swiper-pagination-bullet{
+background:#333;
+opacity:0.4;
+}
+
+.swiper-pagination-bullet-active{
+background:#ff2e63;
+opacity:1;
+}
+
+/* FOLLOW BUTTON */
+
+.instagram-button{
+display:inline-block;
+margin-top:50px;
+padding:14px 32px;
+background:#ff2e63;
+color:white;
+font-weight:600;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.instagram-button:hover{
+background:#e61c55;
+transform:translateY(-3px);
+}

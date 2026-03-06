@@ -1,0 +1,89 @@
+/* SECTION BACKGROUND */
+
+.services-section{
+  padding:90px 20px;
+  background: linear-gradient(135deg,#c9f5f7,#e6fffb,#d7fff2);
+}
+
+/* CONTAINER */
+
+.services-container{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+
+/* TITLE */
+
+.services-title{
+  font-size:38px;
+  font-weight:700;
+  color:#0b3d4f;
+  margin-bottom:20px;
+}
+
+/* SUBTITLE */
+
+.services-subtitle{
+  max-width:750px;
+  margin:auto;
+  font-size:17px;
+  color:#555;
+  line-height:1.7;
+  margin-bottom:60px;
+}
+
+/* GRID */
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+
+.service-card{
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 12px 28px rgba(0,0,0,0.08);
+  transition:all 0.3s ease;
+}
+
+/* CARD HOVER */
+
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* CARD TITLE */
+
+.service-card h3{
+  font-size:20px;
+  color:#0d6a88;
+  margin-bottom:12px;
+}
+
+/* CARD TEXT */
+
+.service-card p{
+  font-size:15px;
+  color:#666;
+  line-height:1.6;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.services-title{
+  font-size:30px;
+}
+
+.services-subtitle{
+  font-size:15px;
+}
+
+}

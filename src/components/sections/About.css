@@ -1,0 +1,178 @@
+/* ================================
+   ABOUT SECTION - DE DANCE DESTINY
+   Enterprise UI Styling
+================================ */
+
+.about-section {
+  padding: 100px 20px;
+
+  /* Light blue -> green -> soft yellow gradient */
+  background: linear-gradient(
+    120deg,
+    #6ea8fe 0%,
+    #7ed6c5 50%,
+    #f5e663 100%
+  );
+
+  font-family: "Poppins", sans-serif;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ================================
+   SECTION TITLE
+================================ */
+
+.about-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.about-subtitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 40px;
+}
+
+/* ================================
+   TEXT CONTENT
+================================ */
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #1f2937;
+  margin-bottom: 18px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================================
+   STATS SECTION
+================================ */
+
+.about-stats {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   STAT CARD
+================================ */
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(10px);
+
+  padding: 30px;
+
+  width: 220px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+/* ================================
+   STAT TEXT
+================================ */
+
+.stat-card h4 {
+  font-size: 32px;
+  color: #0ea5a4;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-size: 15px;
+  color: #475569;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1024px) {
+
+  .about-title {
+    font-size: 36px;
+  }
+
+  .about-subtitle {
+    font-size: 20px;
+  }
+
+  .about-text {
+    font-size: 17px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .about-section {
+    padding: 70px 20px;
+  }
+
+  .about-title {
+    font-size: 30px;
+  }
+
+  .about-subtitle {
+    font-size: 18px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+
+  .about-stats {
+    gap: 20px;
+  }
+
+  .stat-card {
+    width: 180px;
+    padding: 25px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .about-title {
+    font-size: 26px;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+
+  .stat-card {
+    width: 100%;
+  }
+
+}
