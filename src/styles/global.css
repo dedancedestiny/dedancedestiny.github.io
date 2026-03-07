@@ -2,11 +2,25 @@
 /* RESET */
 /* ========================= */
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Root Fix (important for React mobile rendering) */
+
+#root{
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+/* ========================= */
+/* BASE */
+/* ========================= */
 
 html, body {
   width: 100%;
@@ -15,23 +29,37 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
   background: #ffffff;
   color: #111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Images responsive */
+/* Prevent mobile font zoom */
 
-img {
+html{
+  -webkit-text-size-adjust:100%;
+}
+
+/* ========================= */
+/* MEDIA */
+/* ========================= */
+
+img,
+picture,
+video,
+canvas,
+svg {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Sections spacing */
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
 
 .section {
   padding: 80px 5%;
 }
-
-/* Container */
 
 .container {
   width: 100%;
@@ -39,15 +67,21 @@ img {
   margin: auto;
 }
 
-/* Buttons */
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
 
-button, .btn {
+button,
+.btn {
   cursor: pointer;
   border: none;
   outline: none;
+  font-family: inherit;
 }
 
-/* Links */
+/* ========================= */
+/* LINKS */
+/* ========================= */
 
 a {
   text-decoration: none;
@@ -89,6 +123,10 @@ a {
 }
 
 @media (max-width: 480px){
+
+  .section{
+    padding:50px 16px;
+  }
 
   h1{
     font-size:24px;

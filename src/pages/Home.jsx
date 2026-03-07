@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 
 import Navbar from "../components/layout/Navbar";
@@ -12,6 +12,7 @@ import Contact from "../components/sections/Contact";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 
 function Home() {
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
