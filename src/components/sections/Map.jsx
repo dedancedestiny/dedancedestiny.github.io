@@ -24,7 +24,7 @@ function Map() {
     "https://www.google.com/maps/dir/?api=1&destination=De+Dance+Destiny+-+OMR+Chennai";
 
   const openMapsURL =
-    "https://www.google.com/maps/place/De+Dance+Destiny+-+OMR";
+    "https://www.google.com/maps/place/De+Dance+Destiny+-+OMR/@12.8776283,80.2171892,17z/data=!3m1!4b1!4m6!3m5!1s0x3a525bbaf231c865:0x477f5416dafd471e!8m2!3d12.8776231!4d80.2197641!16s%2Fg%2F11z0kqr7xp?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D";
 
 
   /* Structured Data for SEO */
