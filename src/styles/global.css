@@ -40,7 +40,6 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 
-  /* smooth mobile scroll */
   -webkit-overflow-scrolling:touch;
   touch-action:manipulation;
 }
@@ -63,13 +62,18 @@ svg{
 /* ENTERPRISE LAYOUT */
 /* ========================= */
 
-/* Full width sections like Cognizant */
+/* Full width sections */
 
 .section{
   width:100%;
   margin:0;
-  padding:0px 0;
+  padding:0;
   position:relative;
+}
+
+section{
+  margin:0;
+  padding:0;
 }
 
 /* Content container */
@@ -85,6 +89,10 @@ svg{
 /* TYPOGRAPHY */
 /* ========================= */
 
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+}
+
 h1{
   font-size:48px;
   line-height:1.2;
@@ -98,6 +106,7 @@ h2{
 p{
   font-size:16px;
   line-height:1.7;
+  margin:0;
 }
 
 /* ========================= */
@@ -128,7 +137,7 @@ a{
 @media (max-width:1024px){
 
   .section{
-    padding:70px 0;
+    padding:0;
   }
 
   .container{
@@ -140,7 +149,7 @@ a{
 @media (max-width:768px){
 
   .section{
-    padding:60px 0;
+    padding:0;
   }
 
   .container{
@@ -164,7 +173,7 @@ a{
 @media (max-width:480px){
 
   .section{
-    padding:50px 0;
+    padding:0;
   }
 
   .container{
