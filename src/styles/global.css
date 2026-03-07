@@ -8,6 +8,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  /* Improve touch responsiveness */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Root Fix (important for React mobile rendering) */
@@ -29,14 +32,24 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
   background: #ffffff;
   color: #111;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* NEW: smoother mobile scrolling */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Prevent mobile font zoom */
 
 html{
   -webkit-text-size-adjust:100%;
+}
+
+/* Improve touch response */
+
+body{
+  touch-action: manipulation;
 }
 
 /* ========================= */
@@ -59,6 +72,9 @@ svg {
 
 .section {
   padding: 80px 5%;
+
+  /* NEW: improve animation rendering */
+  will-change: transform;
 }
 
 .container {

@@ -2,7 +2,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import "./FloatingWhatsApp.css";
 
 function FloatingWhatsApp() {
-  const phoneNumber = "91874470020";
+  const phoneNumber = "918754470020";
 
   const message =
     "Hi DE Dance Destiny Academy, I would like to know about dance classes in Chennai.";

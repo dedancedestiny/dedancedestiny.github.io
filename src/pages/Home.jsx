@@ -14,20 +14,54 @@ import FloatingWhatsApp from "../components/FloatingWhatsApp";
 function Home() {
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({
+      duration: 800,          // faster animation
+      once: true,             // animation runs only once (important for mobile)
+      offset: 80,             // triggers animation earlier
+      easing: "ease-out-cubic"
+    });
+
+    // Refresh animations after load
+    setTimeout(() => {
+      AOS.refresh();
+    }, 500);
+
   }, []);
 
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Instagram />
-      <Map />
-      <Contact />
+
+      <main>
+
+        <Hero />
+
+        <section className="section">
+          <About />
+        </section>
+
+        <section className="section">
+          <Services />
+        </section>
+
+        <section className="section">
+          <Instagram />
+        </section>
+
+        <section className="section">
+          <Map />
+        </section>
+
+        <section className="section">
+          <Contact />
+        </section>
+
+      </main>
+
       <Footer />
+
       <FloatingWhatsApp />
+
     </>
   );
 }
