@@ -2,7 +2,7 @@
 
 .map-section{
 background:#e8f7f5;
-padding:100px 20px;
+padding:70px 20px;   /* reduced from 100px */
 }
 
 
@@ -18,14 +18,14 @@ margin:auto;
 
 .map-header{
 text-align:center;
-margin-bottom:60px;
+margin-bottom:35px;   /* reduced from 60px */
 }
 
 .map-header h2{
 font-size:34px;
 font-weight:700;
 color:#0f172a;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
 .map-header p{
@@ -42,7 +42,7 @@ line-height:1.7;
 .map-grid{
 display:grid;
 grid-template-columns:1fr 1.4fr;
-gap:40px;
+gap:35px;   /* reduced from 40px */
 align-items:center;
 }
 
@@ -58,7 +58,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.08);
 
 .map-info h3{
 font-size:22px;
-margin-bottom:20px;
+margin-bottom:18px;
 color:#0f172a;
 }
 
@@ -83,9 +83,9 @@ color:#334155;
 /* BUTTONS */
 
 .map-buttons{
-margin-top:25px;
+margin-top:22px;
 display:flex;
-gap:15px;
+gap:12px;
 flex-wrap:wrap;
 }
 
@@ -123,6 +123,19 @@ background:#1e293b;
 }
 
 
+/* OPEN MAP BUTTON (navigation boost) */
+
+.map-btn.open-map{
+background:#f1f5f9;
+color:#0f172a;
+border:1px solid #e2e8f0;
+}
+
+.map-btn.open-map:hover{
+background:#e2e8f0;
+}
+
+
 /* MAP */
 
 .map-embed iframe{
@@ -150,12 +163,16 @@ height:320px;
 font-size:28px;
 }
 
+.map-section{
+padding:60px 20px;  /* tighter mobile spacing */
+}
+
 }
 
 @media (max-width:768px){
 
-.map-wrapper iframe{
-  height:300px;
+.map-embed iframe{
+height:300px;
 }
 
 }

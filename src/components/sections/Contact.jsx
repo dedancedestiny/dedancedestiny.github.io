@@ -20,18 +20,28 @@ function Contact() {
     }
   };
 
+  const handleDirections = () => {
+    const destination =
+      "DE Dance Destiny OMR Chennai, Nookampalayam Ring Road, Semmanchery, Chennai";
+    const mapURL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+      destination
+    )}`;
+
+    window.open(mapURL, "_blank");
+  };
+
   return (
     <section className="contact-section" id="contact">
 
       {/* SEO Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       <div className="contact-container">
 
         <div className="contact-header">
-
           <h2>Contact DE Dance Destiny</h2>
 
           <p>
@@ -39,26 +49,24 @@ function Contact() {
             Contact our team today and start your dance journey at the
             best dance academy in OMR Chennai.
           </p>
-
         </div>
-
 
         <div className="contact-grid">
 
           {/* PHONE */}
 
           <div className="contact-card">
-
             <div className="contact-icon">📞</div>
 
             <h3>Call Us</h3>
 
-            <p>Speak directly with our team for class details and enrollment.</p>
+            <p>
+              Speak directly with our team for class details and enrollment.
+            </p>
 
             <a href="tel:8754470020" className="contact-btn">
               8754470020
             </a>
-
           </div>
 
 
@@ -70,7 +78,9 @@ function Contact() {
 
             <h3>Email Us</h3>
 
-            <p>Send your questions about classes, events, or collaborations.</p>
+            <p>
+              Send your questions about classes, events, or collaborations.
+            </p>
 
             <a
               href="mailto:omrdedancedestiny@gmail.com"
@@ -91,19 +101,17 @@ function Contact() {
             <h3>Visit Our Studio</h3>
 
             <p>
-              No 63, Ambrosio Apartment, Club House<br/>
-              2nd Floor, Nookampalayam Ring Road<br/>
+              No 63, Ambrosio Apartment, Club House<br />
+              2nd Floor, Nookampalayam Ring Road<br />
               Semmanchery, Chennai – 600119
             </p>
 
-            <a
-              href="https://www.google.com/maps/place/De+Dance+Destiny+-+OMR"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleDirections}
               className="contact-btn"
             >
               Get Directions
-            </a>
+            </button>
 
           </div>
 

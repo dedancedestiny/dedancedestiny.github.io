@@ -3,46 +3,81 @@ import "./Map.css";
 
 function Map() {
 
+  const business = {
+    name: "DE Dance Destiny - OMR",
+    phone: "+918754470020",
+    email: "omrdedancedestiny@gmail.com",
+    address: {
+      street: "No 63, Ambrosio Apartment, Club House, 2nd Floor",
+      road: "Nookampalayam Ring Road",
+      locality: "Semmanchery",
+      city: "Chennai",
+      state: "Tamil Nadu",
+      zip: "600119",
+      country: "India"
+    }
+  };
+
+  /* Navigation links */
+
+  const directionsURL =
+    "https://www.google.com/maps/dir/?api=1&destination=De+Dance+Destiny+-+OMR+Chennai";
+
+  const openMapsURL =
+    "https://www.google.com/maps/place/De+Dance+Destiny+-+OMR";
+
+
+  /* Structured Data for SEO */
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "DanceSchool",
-    "name": "DE Dance Destiny",
-    "url": "https://www.dedancedestiny.com",
-    "telephone": "+918754470020",
-    "email": "omrdedancedestiny@gmail.com",
-    "address": {
+    name: "DE Dance Destiny",
+    url: "https://www.dedancedestiny.com",
+    telephone: business.phone,
+    email: business.email,
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "No 63, Ambrosio Apartment, Club House, 2nd Floor, Nookampalayam Ring Road, Semmanchery",
-      "addressLocality": "Chennai",
-      "addressRegion": "Tamil Nadu",
-      "postalCode": "600119",
-      "addressCountry": "India"
+      streetAddress: business.address.street,
+      addressLocality: business.address.locality,
+      addressRegion: business.address.state,
+      postalCode: business.address.zip,
+      addressCountry: business.address.country
     },
-    "sameAs": [
-      "https://www.instagram.com/dedancedestiny_omr"
-    ]
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 12.8776231,
+      longitude: 80.2197641
+    }
   };
 
   return (
     <section className="map-section" id="location">
 
       {/* SEO Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
 
       <div className="map-container">
+
+
+        {/* SECTION HEADER */}
 
         <div className="map-header">
 
           <h2>Visit DE Dance Destiny – OMR Chennai</h2>
 
           <p>
-            Looking for the best dance classes in OMR Chennai? Visit 
+            Looking for the best dance classes in OMR Chennai? Visit
             <strong> DE Dance Destiny </strong>
-            for professional training in Kids Dance, Hip Hop, Adult Dance,
-            and Personal Dance Classes. Our studio offers expert instructors,
-            performance training, and a vibrant dance community.
+            for professional training in Kids Dance, Hip Hop, Adult Dance
+            and Personal Dance Classes. Join our vibrant dance community
+            and learn from experienced instructors.
           </p>
 
         </div>
@@ -50,32 +85,45 @@ function Map() {
 
         <div className="map-grid">
 
-          {/* CONTACT INFO */}
+
+          {/* CONTACT INFORMATION */}
 
           <div className="map-info">
 
             <h3>Our Studio Location</h3>
 
             <p className="map-address">
-              📍 No 63, Ambrosio Apartment<br/>
-              Club House, 2nd Floor<br/>
-              Nookampalayam Ring Road<br/>
-              Semmanchery, Chennai – 600119
+              📍 {business.address.street} <br/>
+              {business.address.road} <br/>
+              {business.address.locality}, {business.address.city} <br/>
+              {business.address.state} – {business.address.zip}
             </p>
+
 
             <p className="map-contact">
-              📞 8754470020
+              📞
+              <a href="tel:+918754470020">
+                8754470020
+              </a>
             </p>
+
 
             <p className="map-email">
-              📧 omrdedancedestiny@gmail.com
+              📧
+              <a href="mailto:omrdedancedestiny@gmail.com">
+                omrdedancedestiny@gmail.com
+              </a>
             </p>
 
+
+            {/* ACTION BUTTONS */}
 
             <div className="map-buttons">
 
+              {/* Primary navigation button */}
+
               <a
-                href="https://www.google.com/maps/place/De+Dance+Destiny+-+OMR"
+                href={directionsURL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="map-btn directions"
@@ -83,11 +131,26 @@ function Map() {
                 Get Directions
               </a>
 
+
+              {/* Call button */}
+
               <a
-                href="tel:8754470020"
+                href="tel:+918754470020"
                 className="map-btn call"
               >
                 Call Now
+              </a>
+
+
+              {/* Extra navigation button to increase map clicks */}
+
+              <a
+                href={openMapsURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="map-btn open-map"
+              >
+                Open in Google Maps
               </a>
 
             </div>
@@ -95,18 +158,24 @@ function Map() {
           </div>
 
 
-          {/* GOOGLE MAP */}
+
+          {/* GOOGLE MAP EMBED */}
 
           <div className="map-embed">
 
             <iframe
               title="DE Dance Destiny Location OMR Chennai"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.467648036648!2d80.21976409999999!3d12.8776231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525bbaf231c865%3A0x477f5416dafd471e!2sDe%20Dance%20Destiny%20-%20OMR!5e0!3m2!1sen!2sin!4v1772351282938!5m2!1sen!2sin"
-              loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.467648036648!2d80.21976409999999!3d12.8776231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525bbaf231c865%3A0x477f5416dafd471e!2sDe%20Dance%20Destiny%20-%20OMR!5e0!3m2!1sen!2sin!4v1772867609009!5m2!1sen!2sin"
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
               allowFullScreen
-            ></iframe>
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
 
           </div>
+
 
         </div>
 
@@ -117,3 +186,4 @@ function Map() {
 }
 
 export default Map;
+
