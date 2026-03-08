@@ -19,13 +19,21 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a href="https://wa.me/918754470020" className="btn-primary">
+
+          <a
+            href="https://wa.me/918754470020"
+            className="btn-primary"
+          >
             Book Free Trial
           </a>
 
-          <a href="#services" className="btn-outline">
+          <a
+            href="#services"
+            className="btn-outline"
+          >
             Explore Programs
           </a>
+
         </div>
 
       </div>

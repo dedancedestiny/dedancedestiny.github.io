@@ -1,58 +1,107 @@
-import React, { useState } from "react";
-import "./Hero.css";
+import React, { useEffect, useState } from "react";
+import { loadGalleryData } from "../../utils/loadGalleryData";
 
-import img1 from "../../assets/dance1.png";
-import img2 from "../../assets/dance2.png";
-import img3 from "../../assets/dance3.png";
-import img4 from "../../assets/dance4.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
-const gallery = [
-  { image: img1, title: "Kids Dance Classes" },
-  { image: img2, title: "Hip Hop Training" },
-  { image: img3, title: "Wedding Choreography" },
-  { image: img4, title: "Stage Performance" }
-];
+import "swiper/css";
+import "swiper/css/pagination";
 
 function HeroGallery() {
 
-  const [active, setActive] = useState(0);
+  const [gallery, setGallery] = useState([]);
+
+  useEffect(() => {
+
+    const loadData = async () => {
+
+      const csvData = await loadGalleryData();
+
+      const images = import.meta.glob("/src/assets/*", {
+        eager: true,
+        import: "default"
+      });
+
+      const formatted = csvData.map((item) => {
+
+        const match = Object.entries(images).find(([path]) =>
+          path.endsWith(item.image.trim())
+        );
+
+        return {
+          title: item.title.trim(),
+          image: match ? match[1] : ""
+        };
+
+      });
+
+      setGallery(formatted);
+
+    };
+
+    loadData();
+
+  }, []);
 
   return (
-    <section className="hero-gallery">
 
-      <div className="gallery-container">
+    <div className="hero-gallery">
 
-        {gallery.map((item, index) => (
-          <div
-            key={index}
-            className={`gallery-card ${index === active ? "active" : ""}`}
-          >
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        slidesPerView={4}
+        spaceBetween={20}
+        loop={true}
 
-            <img src={item.image} alt={item.title} />
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+        }}
 
-            <div className="gallery-overlay">
-              <p>{item.title}</p>
+        pagination={{
+          el: ".hero-pagination",
+          clickable: true
+        }}
+
+        breakpoints={{
+          320: { slidesPerView: 1.2 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 4 }
+        }}
+      >
+
+        {gallery
+          .filter(item => item.image)
+          .map((item, index) => (
+
+          <SwiperSlide key={index}>
+
+            <div className="gallery-card">
+
+              <img
+                src={item.image}
+                alt={item.title}
+              />
+
+              <div className="gallery-overlay">
+                {item.title}
+              </div>
+
             </div>
 
-          </div>
+          </SwiperSlide>
+
         ))}
 
-      </div>
+      </Swiper>
 
-      {/* DOT SLIDER */}
+      {/* DOTS BELOW */}
+      <div className="hero-pagination"></div>
 
-      <div className="gallery-dots">
-        {gallery.map((_, index) => (
-          <span
-            key={index}
-            className={active === index ? "dot active" : "dot"}
-            onClick={() => setActive(index)}
-          ></span>
-        ))}
-      </div>
+    </div>
 
-    </section>
   );
+
 }
 
 export default HeroGallery;
