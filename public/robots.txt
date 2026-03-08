@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dedancedestiny.in/sitemap.xml
+Sitemap: https://d3dance.in/sitemap.xml
