@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Hero.css";
 
-import img1 from "../../assets/dance1.jpeg";
-import img2 from "../../assets/dance2.jpeg";
-import img3 from "../../assets/dance3.jpeg";
-import img4 from "../../assets/dance4.jpeg";
+import img1 from "../../assets/dance1.png";
+import img2 from "../../assets/dance2.png";
+import img3 from "../../assets/dance3.png";
+import img4 from "../../assets/dance4.png";
 
 const gallery = [
   { image: img1, title: "Kids Dance Classes" },
